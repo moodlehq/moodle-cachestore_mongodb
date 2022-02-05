@@ -14,18 +14,11 @@
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
-/**
- * MongoDB unit tests.
- *
- * If you wish to use these unit tests all you need to do is add the following definition to
- * your config.php file.
- *
- * define('TEST_CACHESTORE_MONGODB_TESTSERVER', 'mongodb://localhost:27017');
- *
- * @package    cachestore_mongodb
- * @copyright  2013 Sam Hemelryk
- * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
- */
+namespace cachestore_mongodb;
+
+use cache_store;
+use cache_definition;
+use cachestore_mongodb;
 
 defined('MOODLE_INTERNAL') || die();
 
@@ -37,11 +30,16 @@ require_once($CFG->dirroot.'/cache/stores/mongodb/lib.php');
 /**
  * MongoDB unit test class.
  *
+ * If you wish to use these unit tests all you need to do is add the following definition to
+ * your config.php file.
+ *
+ * define('TEST_CACHESTORE_MONGODB_TESTSERVER', 'mongodb://localhost:27017');
+ *
  * @package    cachestore_mongodb
  * @copyright  2013 Sam Hemelryk
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-class cachestore_mongodb_test extends cachestore_tests {
+class store_test extends \cachestore_tests {
     /**
      * Returns the MongoDB class name
      * @return string
